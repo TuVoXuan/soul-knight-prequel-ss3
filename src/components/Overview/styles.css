@@ -1,0 +1,61 @@
+.overview-section {
+  background-image: url("../../assets/bg-overview-mobile.jpg");
+  background-position: 0 0;
+  background-size: cover;
+}
+
+.background-earth {
+  background-image: url("../../assets/bg-earth.png");
+  background-position: center 0;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.earth-bg-animation {
+  animation: spin-animation 50s linear infinite;
+}
+
+@keyframes spin-animation {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.play-video-animation {
+  animation: scale-animation 2s ease-in-out infinite;
+}
+
+@keyframes scale-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.talk-icon-coin {
+  background-image: url("../../assets/talk-icon-coin.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.talk-icon-flame {
+  background-image: url("../../assets/talk-icon-flame.png");
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
