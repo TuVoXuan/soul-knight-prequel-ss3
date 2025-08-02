@@ -3,29 +3,29 @@ import NPCCharacter from "@/assets/npc-character.gif";
 import NPCShadow from "@/assets/npc-shadow.png";
 import overviewTitle from "@/assets/overview-title-mobile.png";
 import playVideoBtn from "@/assets/play-video-btn.png";
+import downloadBtn from '@/assets/download-btn.png';
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import "./styles.css";
 
 export default function Overview() {
-  const talkIconRef = useRef<HTMLSpanElement>(null);
+  const [talkIconClass, setTalkIconClass] = useState<string>("");
 
-  // useEffect(() => {
-  //   let currClass = '';
-  //   const classes = ["talk-icon-coin", "talk-icon-flame"];
-  //   const interval = setInterval(() => {
-  //     if (!talkIconRef.current) return;
+  useEffect(() => {
+    let currIndex = 0;
+    const classes = ["talk-icon-coin", '', "talk-icon-flame", ''];
+    const interval = setInterval(() => {
+      setTalkIconClass(classes[currIndex]);
+      setTimeout(() => {
+        currIndex++;
+        if (currIndex === classes.length) {
+          currIndex = 0;
+        }
+      }, 1000);
+    }, 1000);
 
-  //     talkIconRef.current.classList.add(currClass);
-  //     setTimeout(() => {
-  //       talkIconRef.current?.classList.remove(currClass);
-  //       lastTalkIconClass = currClass;
-  //       currClass =
-  //     }, 3000);
-  //   }, 3000);
-
-  //   return () => clearInterval(interval);
-  // }, []);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <main className="relative h-full pt-[95px] overview-section flex flex-col justify-center items-center">
@@ -65,7 +65,18 @@ export default function Overview() {
             alt="NPC Shadow"
           />
           <div className="z-20 absolute top-[55px] left-1/2 w-[55px] h-[50px] translate-x-[36px]">
-            <span ref={talkIconRef}></span>
+            <span className={talkIconClass}></span>
+          </div>
+          <div className="absolute top-[250px] flex z-30 justify-center w-full">
+            <div className="w-[156px] cursor-pointer">
+              <Image
+                src={downloadBtn.src}
+                height={downloadBtn.height}
+                width={downloadBtn.width}
+                className="w-[156px] h-[57px] cursor-pointer"
+                alt="Download Button"
+              />
+            </div>
           </div>
         </div>
       </div>
