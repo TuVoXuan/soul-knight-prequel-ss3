@@ -3,7 +3,7 @@ import NPCCharacter from "@/assets/npc-character.gif";
 import NPCShadow from "@/assets/npc-shadow.png";
 import overviewTitle from "@/assets/overview-title-mobile.png";
 import playVideoBtn from "@/assets/play-video-btn.png";
-import downloadBtn from '@/assets/download-btn.png';
+import downloadBtn from "@/assets/download-btn.png";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import "./styles.css";
@@ -13,7 +13,7 @@ export default function Overview() {
 
   useEffect(() => {
     let currIndex = 0;
-    const classes = ["talk-icon-coin", '', "talk-icon-flame", ''];
+    const classes = ["talk-icon-coin", "", "talk-icon-flame", ""];
     const interval = setInterval(() => {
       setTalkIconClass(classes[currIndex]);
       setTimeout(() => {
@@ -80,6 +80,10 @@ export default function Overview() {
           </div>
         </div>
       </div>
+      <span className="cloud-top-left-1 absolute top-[70px] w-[175px] h-[100px] left-[-120px]"></span>
+      <span className="cloud-top-left-2 absolute w-[78px] h-[54px] top-[130px] -right-8"></span>
+      <span className="cloud-middle-left-1 absolute w-[114px] h-[64px] top-[300px] left-[18px]"></span>
+      <span className="cloud-right-1 absolute w-[218px] h-[116px] top-[235px] right-[-120px]"></span>
     </main>
   );
 }
