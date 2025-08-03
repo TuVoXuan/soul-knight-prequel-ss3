@@ -139,3 +139,9 @@
     transform: translateX(0);
   }
 }
+
+.bg-nav-menu-mobile {
+  background-image: url("../../assets/m_menubg-09d6d333.jpg");
+  background-repeat: repeat;
+  background-size: cover;
+}
