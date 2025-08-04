@@ -7,6 +7,7 @@ import { Mousewheel } from "swiper/modules";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Overview from "@/components/Overview";
+import GameFeatures from "@/components/GameFeatures";
 
 export default function Home() {
   return (
@@ -26,8 +27,8 @@ export default function Home() {
         <SwiperSlide>
           <Overview />
         </SwiperSlide>
-        <SwiperSlide className="bg-green-200">
-          <div className="h-full text-black">slide 2</div>
+        <SwiperSlide>
+          <GameFeatures />
         </SwiperSlide>
         <SwiperSlide className="bg-blue-200">
           <div className="h-full text-black">slide 3</div>
