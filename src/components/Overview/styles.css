@@ -66,6 +66,7 @@
   background-repeat: no-repeat;
   position: absolute;
   animation: cloud-left-1-animation 10s ease infinite;
+  rotate: -10deg;
 }
 
 @keyframes cloud-left-1-animation {
@@ -77,6 +78,20 @@
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+@media (min-width: 768px) {
+  @keyframes cloud-left-1-animation {
+    0% {
+      transform: translateX(0);
+    }
+    40% {
+      transform: translateX(-20%);
+    }
+    100% {
+      transform: translateX(0);
+    }
   }
 }
 
