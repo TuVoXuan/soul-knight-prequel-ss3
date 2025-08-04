@@ -8,6 +8,7 @@ import tiktok from "@/assets/tiktok.webp";
 import youtube from "@/assets/youtube.webp";
 import discord from "@/assets/discord.webp";
 import closeIcon from "@/assets/close-icon.png";
+import logoTitle from "@/assets/logo-title.png";
 
 const NavMenuItems = [
   { label: "Overview", href: "#overview" },
@@ -34,8 +35,8 @@ export default function Header() {
   };
 
   return (
-    <header className="absolute top-0 inset-x-0 z-50">
-      <div className="relative">
+    <header className="absolute top-0 inset-x-0 z-50 2xl:max-w-[1920px] 2xl:mx-auto">
+      <div className="relative lg:hidden">
         <div className="relative h-[55px] md:h-[76px] bg-black/60 pl-[76px] md:pl-[104.5px] pr-[10px] md:pr-[13.75px] flex justify-between items-center z-10">
           <Image
             src={logo.src}
@@ -110,6 +111,27 @@ export default function Header() {
             </li>
           </ul>
         </div>
+      </div>
+      <div className="hidden lg:flex h-[85px] 2xl:h-[110px] bg-black/60 px-[133.33px] 2xl:px-[178px] items-center justify-between">
+        <div className="flex flex-shrink-0 items-center">
+          <Image
+            src={logoTitle.src}
+            alt="logo-soul-knight-prequel"
+            height={logoTitle.height}
+            width={logoTitle.width}
+            className="w-[133.33px] 2xl:w-[177.78px] h-auto"
+          />
+        </div>
+        <ul className="flex items-center ">
+          {NavMenuItems.map((item) => (
+            <li
+              key={item.href}
+              className="flex items-center text-white text-[16.67px] 2xl:text-[24.5px] font-medium mx-[26.67px] 2xl:mx-[36px] h-[33.33px] 2xl:h-[45px] cursor-pointer"
+            >
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))}
+        </ul>
       </div>
     </header>
   );
