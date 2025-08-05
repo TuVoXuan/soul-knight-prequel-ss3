@@ -1,6 +1,6 @@
 import "./styles.css";
 // Import Swiper styles
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import m_gameFeature1 from "@/assets/m_game-features-1.webp";
 import m_gameFeature2 from "@/assets/m_game-features-2.webp";
@@ -61,8 +61,16 @@ export default function GameFeatures() {
     });
   };
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      handleNext();
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [current]);
+
   return (
-    <main className="game-features h-full flex items-center justify-center">
+    <main className="relative game-features h-full flex flex-col items-center justify-center">
       <ul className="relative h-[390px] w-[230px] game-features-slider">
         {slides.map((slide, index) => (
           <li
@@ -91,6 +99,22 @@ export default function GameFeatures() {
           onClick={handleNext}
         ></button>
       </ul>
+      <ul className="flex w-fit items-center mt-5">
+        {slides.map((_, index) => (
+          <li
+            key={index}
+            className={cn(
+              "w-[10px] h-[10px] rounded-full bg-white mx-2",
+              current === index ? "game-features-slider-dot" : ""
+            )}
+          ></li>
+        ))}
+      </ul>
+
+      {/* Clouds */}
+      <span className="cloud-1 absolute top-[35px] right-[-30px] w-[131px] h-[76px]"></span>
+      <span className="cloud-5 absolute top-[70px] left-[-10px] w-[100px] h-[55px]"></span>
+      <span className="cloud-3 absolute bottom-[11px] right-[5px] w-[170px] h-[96px]"></span>
     </main>
   );
 }
