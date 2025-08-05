@@ -3,3 +3,23 @@
   background-size: cover;
   background-position: 0 0;
 }
+
+.game-features-slider .slide-active {
+  padding: 8px;
+  background-image: url('../../assets/m_game-features-slider-bg.png');
+  object-position: 0 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+}
+
+.game-features-slider .next-btn {
+  background-image: url('../../assets/game-features-arrow-icon.png');
+  background-size: contain;
+}
+
+.game-features-slider .prev-btn {
+  background-image: url('../../assets/game-features-arrow-icon.png');
+  transform: rotate(180deg);
+    background-size: contain;
+}
