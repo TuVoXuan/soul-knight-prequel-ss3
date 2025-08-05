@@ -16,12 +16,14 @@
 .game-features-slider .next-btn {
   background-image: url("../../assets/game-features-arrow-icon.png");
   background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .game-features-slider .prev-btn {
   background-image: url("../../assets/game-features-arrow-icon.png");
   transform: rotate(180deg);
   background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .game-features-slider-dot {
@@ -90,5 +92,16 @@
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .game-features-slider .slide-active {
+    padding: 12px;
+  }
+  .game-features-slider-dot {
+   
+    width: 27.5px;
+    height: 34.5px;
   }
 }

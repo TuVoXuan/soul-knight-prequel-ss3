@@ -61,23 +61,22 @@ export default function GameFeatures() {
     });
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      handleNext();
-    }, 2000);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     handleNext();
+  //   }, 2000);
 
-    return () => clearTimeout(timer);
-  }, [current]);
+  //   return () => clearTimeout(timer);
+  // }, [current]);
 
   return (
     <main className="relative game-features h-full flex flex-col items-center justify-center">
-      <ul className="relative h-[390px] w-[230px] game-features-slider">
+      <ul className="relative h-[390px] w-[230px] md:h-[585px] md:w-[345] game-features-slider">
         {slides.map((slide, index) => (
           <li
             key={index}
             className={cn(
               "absolute rounded-xl overflow-hidden h-full w-full border scale-[0.8] top-1/2 -translate-y-1/2 transition-all duration-[300ms] z-0 ease-in-out before:absolute before:top-0 before:left-0 before:content-[''] before:w-full before:h-full before:bg-black/70",
-
               getSlideClass(index, current)
             )}
           >
@@ -91,20 +90,20 @@ export default function GameFeatures() {
           </li>
         ))}
         <button
-          className="prev-btn w-[23px] h-[43px] z-10 absolute top-1/2 -left-[20%] -translate-y-1/2"
+          className="prev-btn w-[23px] h-[43px] md:w-[30px] md:h-[56px] z-10 absolute top-1/2 -left-[50%] -translate-y-1/2"
           onClick={handlePrev}
         ></button>
         <button
-          className="next-btn w-[23px] h-[43px] z-10 absolute top-1/2 -right-[20%] -translate-y-1/2"
+          className="next-btn w-[23px] h-[43px] md:w-[30px] md:h-[56px] z-10 absolute top-1/2 -right-[50%] -translate-y-1/2"
           onClick={handleNext}
         ></button>
       </ul>
-      <ul className="flex w-fit items-center mt-5">
+      <ul className="flex w-fit items-center mt-5 md:mt-7 z-10">
         {slides.map((_, index) => (
           <li
             key={index}
             className={cn(
-              "w-[10px] h-[10px] rounded-full bg-white mx-2",
+              "w-[10px] h-[10px] md:w-[13px] md:h-[13px] rounded-full bg-white mx-2",
               current === index ? "game-features-slider-dot" : ""
             )}
           ></li>
@@ -112,9 +111,24 @@ export default function GameFeatures() {
       </ul>
 
       {/* Clouds */}
-      <span className="cloud-1 absolute top-[35px] right-[-30px] w-[131px] h-[76px]"></span>
-      <span className="cloud-5 absolute top-[70px] left-[-10px] w-[100px] h-[55px]"></span>
-      <span className="cloud-3 absolute bottom-[11px] right-[5px] w-[170px] h-[96px]"></span>
+      <span
+        className={cn(
+          "cloud-1 absolute top-[35px] right-[-30px] w-[131px] h-[76px]",
+          "md:top-[48px] md:right-[-42px] md:w-[180px] md:h-[105px]"
+        )}
+      ></span>
+      <span
+        className={cn(
+          "cloud-5 absolute top-[70px] left-[-10px] w-[100px] h-[55px]",
+          "md:top-[96px] md:left-[-14px] md:w-[137.5px] md:h-[75.625px]"
+        )}
+      ></span>
+      <span
+        className={cn(
+          "cloud-3 absolute bottom-[11px] right-[5px] w-[170px] h-[96px]",
+          "md:bottom-[112px] md:right-[260px] md:w-[233px] md:h-[132px]"
+        )}
+      ></span>
     </main>
   );
 }
