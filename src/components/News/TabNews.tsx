@@ -1,0 +1,62 @@
+import React, { useState } from "react";
+import "./styles.css";
+import { cn } from "@/lib/utils";
+
+export default function TabNews() {
+  const newsCates = ["Newest", "Information", "Patch Notes", "Events"];
+  const [activeCate, setActiveCate] = useState<string>("Newest");
+
+  const hanldeClickNavBtn = (type: string) => {
+    const listNewsCate = document.getElementById("list-news-cate");
+    const listNewsCateVisible = document.getElementById(
+      "list-news-cate-visible"
+    );
+
+    if (listNewsCate && listNewsCateVisible) {
+      if (type === "next") {
+        const translateX = Math.max(
+          listNewsCate.clientWidth - listNewsCateVisible.clientWidth,
+          0
+        );
+        listNewsCate.style.transform = `translateX(-${translateX}px)`;
+      } else if (type === "prev") {
+        listNewsCate.style.transform = "translateX(0)";
+      }
+    }
+  };
+
+  return (
+    <div className="relative py-[5px] px-5 h-8 w-full">
+      <span
+        className="prev-btn-news"
+        onClick={() => hanldeClickNavBtn("prev")}
+      ></span>
+      <span
+        className="next-btn-news"
+        onClick={() => hanldeClickNavBtn("next")}
+      ></span>
+      <div
+        id="list-news-cate-visible"
+        className="relative h-full w-full overflow-hidden"
+      >
+        <ul
+          id="list-news-cate"
+          className="list-news-cate absolute h-full flex transition-all duration-500 ease-in-out"
+        >
+          {newsCates.map((item) => (
+            <li
+              key={item}
+              className={cn(
+                "px-[10px] mx-[15px] text-[#ba926b] text-[15px]",
+                activeCate === item && "cate-active text-white font-medium"
+              )}
+              onClick={() => setActiveCate(item)}
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}

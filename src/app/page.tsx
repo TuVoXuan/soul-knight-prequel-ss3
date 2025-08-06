@@ -8,6 +8,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Overview from "@/components/Overview";
 import GameFeatures from "@/components/GameFeatures";
+import News from "@/components/News";
 
 export default function Home() {
   return (
@@ -30,8 +31,8 @@ export default function Home() {
         <SwiperSlide>
           <GameFeatures />
         </SwiperSlide>
-        <SwiperSlide className="bg-blue-200">
-          <div className="h-full text-black">slide 3</div>
+        <SwiperSlide>
+          <News />
         </SwiperSlide>
         <SwiperSlide className="!h-auto">
           <footer className="bg-[#232525] text-white/80 h-auto py-4 flex flex-col items-center justify-center">
