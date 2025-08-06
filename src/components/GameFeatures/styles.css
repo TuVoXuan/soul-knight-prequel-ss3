@@ -7,7 +7,6 @@
 .game-features-slider .slide-active {
   padding: 8px;
   background-image: url("../../assets/m_game-features-slider-bg.png");
-  object-position: 0 0;
   background-size: contain;
   background-repeat: no-repeat;
   border: none;
@@ -100,8 +99,38 @@
     padding: 12px;
   }
   .game-features-slider-dot {
-   
     width: 27.5px;
     height: 34.5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .game-features {
+    background-image: url("../../assets/bg-a7e4e2c8.jpg");
+  }
+
+  .game-features-slider .slide-active {
+    padding: 14px;
+    background-image: url("../../assets/game-features-slider-bg.png");
+  }
+  .cloud-5 {
+    animation: cloud-5-animation 15s ease-in-out infinite;
+  }
+  .cloud-3 {
+    animation: cloud-3-animation 15s ease-in-out infinite;
+  }
+  .cloud-1 {
+    animation: cloud-1-animation 15s ease-in-out infinite;
+  }
+}
+
+@media (min-width: 1536px) {
+  .game-features-slider .slide-active {
+    padding: 18px;
+    background-size: 100% 100%;
+  }
+  .game-features-slider-dot {
+    width: 36px;
+    height: 42px;
   }
 }
