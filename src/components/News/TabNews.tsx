@@ -26,7 +26,7 @@ export default function TabNews() {
   };
 
   return (
-    <div className="relative py-[5px] px-5 h-8 w-full">
+    <div className="relative py-[5px] px-5 h-8 w-full md:py-[8px] md:px-[27.5px] md:h-[44px]">
       <span
         className="prev-btn-news"
         onClick={() => hanldeClickNavBtn("prev")}
@@ -47,7 +47,7 @@ export default function TabNews() {
             <li
               key={item}
               className={cn(
-                "px-[10px] mx-[15px] text-[#ba926b] text-[15px]",
+                "shrink-0 px-[10px] mx-[15px] text-[#ba926b] text-[15px] md:text-[20px] md:px-[14px] md:mx-[21px]",
                 activeCate === item && "cate-active text-white font-medium"
               )}
               onClick={() => setActiveCate(item)}

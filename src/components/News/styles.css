@@ -139,3 +139,21 @@
     transform: translateX(0);
   }
 }
+
+@media (min-width: 768px) {
+  .next-btn-news, .prev-btn-news {
+    width: 22px;
+    height: 24.75px;
+  }
+    .list-news-cate .cate-active {
+      border-radius: 16px;
+    }
+
+.list-news-cate li::after {
+  width: 8px;
+  height: 22px;
+  right: -28px;
+  top: 10px;
+  transform: translateY(0);
+}
+}
