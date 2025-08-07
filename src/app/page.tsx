@@ -54,6 +54,7 @@ export default function Home() {
           }
         }}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+        speed={1000}
       >
         <SwiperSlide>
           <Overview />
