@@ -117,11 +117,11 @@ export default function GameFeatures() {
           </li>
         ))}
         <button
-          className="prev-btn w-[23px] h-[43px] md:w-[30px] md:h-[56px] lg:w-[46px] lg:h-[84px] 2xl:w-[61px] 2xl:h-[111px] z-10 absolute top-1/2 -left-1/5 lg:-left-1/4 -translate-y-1/2"
+          className="prev-btn cursor-pointer w-[23px] h-[43px] md:w-[30px] md:h-[56px] lg:w-[46px] lg:h-[84px] 2xl:w-[61px] 2xl:h-[111px] z-10 absolute top-1/2 -left-1/5 lg:-left-1/4 -translate-y-1/2"
           onClick={handlePrev}
         ></button>
         <button
-          className="next-btn w-[23px] h-[43px] md:w-[30px] md:h-[56px] lg:w-[46px] lg:h-[84px] 2xl:w-[61px] 2xl:h-[111px] z-10 absolute top-1/2 -right-1/5 lg:-right-1/4 -translate-y-1/2"
+          className="next-btn cursor-pointer w-[23px] h-[43px] md:w-[30px] md:h-[56px] lg:w-[46px] lg:h-[84px] 2xl:w-[61px] 2xl:h-[111px] z-10 absolute top-1/2 -right-1/5 lg:-right-1/4 -translate-y-1/2"
           onClick={handleNext}
         ></button>
       </ul>

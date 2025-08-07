@@ -9,12 +9,19 @@ import youtube from "@/assets/youtube.webp";
 import discord from "@/assets/discord.webp";
 import closeIcon from "@/assets/close-icon.png";
 import logoTitle from "@/assets/logo-title.png";
+import { cn } from "@/lib/utils";
+import activeMenu from "@/assets/menu_active-183340bf.png";
+
+interface HeaderProps {
+  activeIndex: number;
+  onChangeActiveIndex: (index: number) => void;
+}
 
 const NavMenuItems = [
-  { label: "Overview", href: "#overview" },
-  { label: "Game Features", href: "#game-features" },
+  { label: "Overview", href: "#overview", id: 0 },
+  { label: "Game Features", href: "#game-features", id: 1 },
   { label: "Classes", href: "#classes" },
-  { label: "News", href: "#news" },
+  { label: "News", href: "#news", id: 2 },
 ];
 
 const SocialMediaIcons = [
@@ -25,7 +32,10 @@ const SocialMediaIcons = [
   { src: discord, alt: "Discord" },
 ];
 
-export default function Header() {
+export default function Header({
+  activeIndex,
+  onChangeActiveIndex,
+}: HeaderProps) {
   const handleClickMenuIcon = () => {
     const navMenu = document.getElementById("navMenu");
     if (navMenu) {
@@ -78,8 +88,25 @@ export default function Header() {
             {NavMenuItems.map((item) => (
               <li
                 key={item.href}
-                className="py-[10px] md:py-[13.75px] text-[#757575] text-[18px] md:text-[24.75px] font-medium border-b-[1px] border-b-solid border-b-[#cecece]/60 flex justify-center items-center"
+                className={cn(
+                  "py-[10px] md:py-[13.75px] text-[#757575] text-[18px] md:text-[24.75px] font-medium border-b-[1px] border-b-solid border-b-[#cecece]/60 flex justify-center items-center",
+                  activeIndex === item.id && "flex items-end text-[#00a2e3]"
+                )}
+                onClick={() => {
+                  if (item.id !== undefined) {
+                    onChangeActiveIndex(item.id);
+                  }
+                }}
               >
+                {activeIndex === item.id && (
+                  <Image
+                    className="h-[26px] w-[26px] mr-2"
+                    src={activeMenu.src}
+                    height={activeMenu.height}
+                    width={activeMenu.width}
+                    alt="active-menu-icon"
+                  />
+                )}
                 {item.label}
               </li>
             ))}
@@ -98,7 +125,10 @@ export default function Header() {
                 </span>
               ))}
             </li>
-            <li className="pt-[15px] md:pt-[20.625px] flex justify-center">
+            <li
+              onClick={handleClickMenuIcon}
+              className="pt-[15px] md:pt-[20.625px] flex justify-center"
+            >
               <button>
                 <Image
                   className="w-[20px] h-auto"
@@ -126,8 +156,25 @@ export default function Header() {
           {NavMenuItems.map((item) => (
             <li
               key={item.href}
-              className="flex items-center text-white text-[16.67px] 2xl:text-[24.5px] font-medium mx-[26.67px] 2xl:mx-[36px] h-[33.33px] 2xl:h-[45px] cursor-pointer"
+              className={cn(
+                "relative flex items-center text-white text-[16.67px] 2xl:text-[24.5px] font-medium mx-[26.67px] 2xl:mx-[36px] h-[33.33px] 2xl:h-[45px] cursor-pointer",
+                activeIndex === item.id && "text-[#00a2e3]"
+              )}
+              onClick={() => {
+                if (item.id !== undefined) {
+                  onChangeActiveIndex(item.id);
+                }
+              }}
             >
+              {activeIndex === item.id && (
+                <Image
+                  className="absolute top-[-7px] left-1/2 -translate-x-1/2 h-[32px] w-[42px] 2xl:w-[55px] 2xl:h-[43px] 2xl:top-[-9px]"
+                  src={activeMenu.src}
+                  height={activeMenu.height}
+                  width={activeMenu.width}
+                  alt="active-menu-icon"
+                />
+              )}
               <a href={item.href}>{item.label}</a>
             </li>
           ))}

@@ -32,11 +32,11 @@ export default function TabNews() {
       className="relative py-[5px] px-5 h-8 w-full md:py-[8px] md:px-[27.5px] md:h-[44px]"
     >
       <span
-        className="prev-btn-news"
+        className="prev-btn-news cursor-pointer"
         onClick={() => hanldeClickNavBtn("prev")}
       ></span>
       <span
-        className="next-btn-news"
+        className="next-btn-news cursor-pointer"
         onClick={() => hanldeClickNavBtn("next")}
       ></span>
       <div
@@ -51,7 +51,7 @@ export default function TabNews() {
             <li
               key={item}
               className={cn(
-                "shrink-0 px-[10px] mx-[15px] text-[#ba926b] text-[15px] md:text-[20px] md:px-[14px] md:mx-[21px] lg:text-[16px] lg:mx-[12.5px] lg:px-2 2xl:text-[22px] 2xl:px-[12px] 2xl:mx-[17px]",
+                "cursor-default shrink-0 px-[10px] mx-[15px] text-[#ba926b] text-[15px] md:text-[20px] md:px-[14px] md:mx-[21px] lg:text-[16px] lg:mx-[12.5px] lg:px-2 2xl:text-[22px] 2xl:px-[12px] 2xl:mx-[17px]",
                 activeCate === item && "cate-active text-white font-medium"
               )}
               onClick={() => setActiveCate(item)}

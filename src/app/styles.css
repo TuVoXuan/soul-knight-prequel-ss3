@@ -1,0 +1,16 @@
+
+.down-btn {
+  animation: down-btn-animation 1s ease-in-out infinite;
+}
+
+@keyframes down-btn-animation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
