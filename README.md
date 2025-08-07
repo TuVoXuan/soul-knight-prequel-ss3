@@ -1,4 +1,16 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Soul Knight Prequel Clone
+
+A website clone of **Soul Knight Prequel** built with [Next.js](https://nextjs.org), [Tailwind CSS](https://tailwindcss.com), and [TypeScript](https://www.typescriptlang.org/).
+
+![Soul Knight Prequel Clone Screenshot](https://res.cloudinary.com/cake-shop/image/upload/v1754580642/Fh9svbDmohofEfEZhHWoQpwdRky2_ygv35r.png)
+
+---
+
+## Tech Stack
+
+- **Next.js** – React framework for production
+- **Tailwind CSS** – Utility-first CSS framework
+- **TypeScript** – Typed JavaScript at scale
 
 ## Getting Started
 
